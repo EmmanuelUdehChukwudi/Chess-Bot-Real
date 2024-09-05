@@ -10,11 +10,9 @@ def InverseKinematics(x,y,z):
     T1 = atan2(y,x)
     r2 = z -a1
     r = sqrt(r1**2 + r2**2)
-    beta = atan2(r2,r1)
-    alpha = acos((r**2 + a2**2 - a3**2)/(2*r*a2))
-    T2 = beta + alpha
+    T2 = atan2(r2,r1)
     gamma = acos((a3**2 + a2**2 - r**2)/(2*a2*a3))
-    T3 = np.pi - gamma
+    T3 = gamma - np.pi/2
     
     return T1, T2, T3
 

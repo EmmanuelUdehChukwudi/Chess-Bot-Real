@@ -14,6 +14,7 @@ Servo elbow_servo;
 Servo wrist_servo;
 Servo wrist_twist_servo;
 Servo gripper_twist_servo;
+Servo gripper;
 
 
 void setup() {
@@ -23,6 +24,7 @@ void setup() {
   wrist_servo.attach(WRIST_PIN);
   wrist_twist_servo.attach(WRIST_TWIST_PIN);
   gripper_twist_servo.attach(GRIPPER_TWIST_PIN);
+  gripper.attach(GRIPPER_PIN);
   
   waist_servo.write(0); 
   shoulder_servo.write(0); 
@@ -30,9 +32,23 @@ void setup() {
   wrist_servo.write(0);
   wrist_twist_servo.write(0);
   gripper_twist_servo.write(0);
+  gripper.write(0);
   
 }
 
 void loop() {
+
+for(int i= 35; i>=0; i--)
+{
+  gripper.write(i);
+  delay(100);
+}
+
+for(int i= 0; i<=180; i++)
+{
+  gripper.write(i);
+  delay(100);
+}
+
 
 }
